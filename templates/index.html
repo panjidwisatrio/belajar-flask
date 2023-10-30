@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<title>Todo List</title>
 {% endblock %}
 
 {% block body %}
@@ -15,7 +16,7 @@
             <th>Action</th>
         </tr>
 
-        {% for task in task %}
+        {% for task in tasks %}
             <tr>
                 <td>{{ task.content }}</td>
                 <td>{{ task.date_created.date() }}</td>
