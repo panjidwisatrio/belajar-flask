@@ -36,7 +36,18 @@ def index_post():
         db.session.add(new_task)
         db.session.commit()
         return redirect('/')
-    except Exception as x:  # handle
+    except Exception as x:
+        print("Unexpected error. Details: {}".format(x))
+
+
+@app.route("/delete/<int:id>")
+def delete_task(id):
+    task = Todo.query.get_or_404(id)
+    try:
+        db.session.delete(task)
+        db.session.commit()
+        return redirect('/')
+    except Exception as x:
         print("Unexpected error. Details: {}".format(x))
 
 
