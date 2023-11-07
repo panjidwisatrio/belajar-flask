@@ -9,8 +9,8 @@ Todo List
 
     <h1>TODO List</h1>
 
-    <table>
-        <tr>
+    <table class="table table-striped table-hover">
+        <tr class="text-center">
             <th>Task</th>
             <th>Date</th>
             <th>Action</th>
@@ -29,9 +29,9 @@ Todo List
         {% endfor %}
     </table>
     <br>
-    <form action="/" method="POST">
-        <input type="text" name="content" id="content">
-        <input type="submit" value="Add Task">
+    <form action="/" method="POST" class="row row-cols-lg-auto g-3 align-items-center">
+        <input class="form-control" type="text" name="content" id="content">
+        <input class="btn btn-primary text-white" type="submit" value="Add Task">
     </form>
 
 </div>
