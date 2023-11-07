@@ -3,7 +3,6 @@ from datetime import datetime
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
@@ -64,7 +63,3 @@ def update(id):
             print("Unexpected error. Details: {}".format(x))
     else:
         return render_template('update.html', task=task)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
