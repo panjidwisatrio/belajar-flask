@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/d279e456-22f9-4cd6-a146-74abc46e5ea9/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/todo-irs",
+    "appService.deploySubpath": "."
+}
