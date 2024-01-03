@@ -3,7 +3,7 @@ import os
 import uvicorn
 from fastapi import FastAPI
 
-base_dir = os.path.dirname(os.path.abspath(__file__))
+base_dir = '/home/site/wwwroot'
 
 app = FastAPI(title="Automate Preventive Maintenance API", version="1.0", )
 
