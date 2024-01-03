@@ -1,5 +1,6 @@
 import sys
 import os
+from fastapi.responses import FileResponse
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 
@@ -70,6 +71,15 @@ async def upload_file(
         with open(base_dir + '/data/' + file.filename, 'wb') as f:
             f.write(contents)
         return {'status': 'success'}
+    except Exception as e:
+        return {'status': 'error', 'message': str(e)}
+
+# Endpoint to download file
+@app.get("/download_file")
+async def download_file(file_name: str):
+    try:
+        file_path = f'{base_dir}/data/{file_name}'
+        return FileResponse(file_path, filename={file_name})
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
 
