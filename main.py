@@ -11,10 +11,14 @@ app = FastAPI(title="Automate Preventive Maintenance API", version="1.0", )
 @app.get("/create_folder_file")
 async def create_folder_file():
     try:
+        data = None
         os.mkdir(base_dir + '/data')
         with open(base_dir + '/data/test.txt', 'w') as f:
             f.write('Hello World!')
-        return {'status': 'success'}
+            
+        with open(base_dir + '/data/test.txt', 'r') as f:
+            data = f.read()
+        return {'status': 'success', 'data': data}
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
 
