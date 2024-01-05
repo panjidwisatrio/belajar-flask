@@ -1,5 +1,6 @@
 import sys
 import os
+import shutil
 from fastapi.responses import FileResponse
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
@@ -25,10 +26,11 @@ async def create_folder_file():
 
 # Endpoint to read file
 @app.get("/read_file")
-async def read_file():
+async def read_file(file_name: str):
     try:
+        readed_file = f'{base_dir}/data/{file_name}'
         data = None
-        with open(base_dir + '/data/test.txt', 'r') as f:
+        with open(readed_file, 'r') as f:
             data = f.read()
         return {'status': 'success', 'data': data}
     except Exception as e:
@@ -36,18 +38,20 @@ async def read_file():
 
 # Endpoint to delete file
 @app.get("/delete_file")
-async def delete_file():
+async def delete_file(file_name: str):
     try:
-        os.remove(base_dir + '/data/test.txt')
+        deleted_file = f'{base_dir}/data/{file_name}'
+        os.remove(deleted_file)
         return {'status': 'success'}
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
     
 # Endpoint to delete folder
 @app.get("/delete_folder")
-async def delete_folder():
+async def delete_folder(folder_name: str):
     try:
-        os.rmdir(base_dir + '/data')
+        deleted_folder = f'{base_dir}/{folder_name}'
+        shutil.rmtree(deleted_folder)
         return {'status': 'success'}
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
