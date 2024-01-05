@@ -83,7 +83,7 @@ async def upload_file(
 async def download_file(file_name: str):
     try:
         file_path = f'{base_dir}/data/{file_name}'
-        return FileResponse(file_path, filename={file_name})
+        return FileResponse(file_path, filename=file_name)
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
 
