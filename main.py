@@ -1,11 +1,10 @@
-import sys
 import os
 import shutil
 from fastapi.responses import FileResponse
 import uvicorn
 from fastapi import FastAPI, File, UploadFile
 
-base_dir = '/home/site/wwwroot'
+base_dir = '/tmp'
 
 app = FastAPI(title="Automate Preventive Maintenance API", version="1.0", )
 
