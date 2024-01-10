@@ -3,5 +3,4 @@ uvicorn
 gunicorn
 databases[sqlite]
 SQLAlchemy
-python-magic-bin==0.4.14
 python-multipart==0.0.6
