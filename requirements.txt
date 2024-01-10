@@ -1,4 +1,6 @@
 fastapi
 uvicorn
 gunicorn
+databases[sqlite]
+SQLAlchemy
 python-multipart==0.0.6
