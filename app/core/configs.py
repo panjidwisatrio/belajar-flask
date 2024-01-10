@@ -2,7 +2,6 @@ import os
 import logging
 
 
-
 # path config
 BASE_DIR = "/home/site/wwwroot"
 
