@@ -30,10 +30,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       
-      - name: Install libmagic1
+      - name: Install python magic
         run: |
           sudo apt-get update
-          sudo apt-get install -y libmagic1
+          sudo apt-get install -y python3-magic
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
