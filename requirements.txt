@@ -3,5 +3,4 @@ uvicorn
 gunicorn
 databases[sqlite]
 SQLAlchemy
-python-magic
 python-multipart==0.0.6
