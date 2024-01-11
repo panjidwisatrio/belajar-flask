@@ -31,7 +31,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Install Magic library
-        run: pip install python-magic-bin
+        run: pip install python-magic
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
